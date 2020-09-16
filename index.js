@@ -7,20 +7,10 @@ server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
+require('./routes/room_routes').register(app);
+
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/public/index.html');
-});
-
-app.get('/javascript', (request, response) => {
-    response.sendFile(__dirname + '/public/rooms/javascript.html');
-});
-
-app.get('/swift', (request, response) => {
-    response.sendFile(__dirname + '/public/rooms/swift.html');
-});
-
-app.get('/html', (request, response) => {
-    response.sendFile(__dirname + '/public/rooms/html.html');
 });
 
 //tech namespace
